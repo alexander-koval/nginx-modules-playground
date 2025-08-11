@@ -1,0 +1,144 @@
+# ===================================================================
+#  .gitignore для проектов на C/C++
+# ===================================================================
+# Этот файл говорит Git, какие файлы и папки игнорировать.
+# Он подходит для Make, CMake, Ninja и различных IDE.
+
+# --- Скомпилированные артефакты ---
+# Объектные файлы
+*.o
+*.obj
+*.lo
+*.la
+
+# Предкомпилированные заголовки
+*.gch
+*.pch
+
+# Статические библиотеки
+*.a
+*.lib
+
+# Динамические/разделяемые библиотеки и модули
+*.so
+*.dll
+*.dylib
+
+# Исполняемые файлы
+*.exe
+*.out
+*.app
+a.out # Стандартное имя исполняемого файла в GCC/Clang
+
+# Файлы зависимостей, генерируемые компилятором
+*.d
+
+
+# --- Директории системы сборки ---
+# ЛУЧШАЯ ПРАКТИКА: Использовать сборку вне исходного дерева ("out-of-source builds").
+# Например, для CMake: mkdir build && cd build && cmake ..
+# Добавьте сюда имена ваших папок для сборки.
+[Bb]uild/
+[Bb]uild*/
+_build/
+build/
+builddir/
+out/
+bin/
+dist/
+
+
+# --- Файлы, генерируемые CMake ---
+# (обычно находятся в папке сборки, но на всякий случай)
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+compile_commands.json
+
+
+# --- Файлы, генерируемые Autotools ---
+autom4te.cache/
+configure
+Makefile.in
+
+
+# --- Файлы специфичные для IDE и редакторов ---
+
+# Visual Studio Code
+# Игнорируем всё, кроме файлов, которые полезно хранить в репозитории.
+# Таким образом, пользовательские настройки и история не попадут в Git.
+.vscode/*
+!/.vscode/settings.json
+!/.vscode/tasks.json
+!/.vscode/launch.json
+!/.vscode/extensions.json
+!/.vscode/c_cpp_properties.json
+*.code-workspace
+
+# Visual Studio (Windows)
+.vs/
+*.sln.dotstates
+*.suo
+*.user
+*.vcxproj.user
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+ipch/
+
+# VSCode
+.vscode/
+
+# CLion (JetBrains)
+.idea/
+
+# Xcode (macOS)
+*.xcodeproj/
+project.xcworkspace/
+*.xcworkspace/
+xcuserdata/
+
+# Qt Creator
+*.pro.user
+*.pro.user.*
+
+# Eclipse
+.cproject
+.project
+.settings/
+
+
+# --- Файлы отладки и профилирования ---
+# Дампы памяти (Core dumps)
+core
+*.core
+
+# Вывод профилировщиков
+gmon.out
+*.prof
+*.trace
+
+
+# --- Общие временные и лог-файлы ---
+*.log
+*~
+*.swp
+*.swo
+
+
+# --- Файлы операционной системы ---
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+
+nginx/
+conf/

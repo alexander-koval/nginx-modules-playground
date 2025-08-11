@@ -1,0 +1,13 @@
+ngx_addon_name=ngx_http_req_log_module
+MODULE_SRCS="$ngx_addon_dir/ngx_http_req_log_module.c"
+
+if test -n "$ngx_module_link"; then
+    ngx_module_type=HTTP
+    ngx_module_name=$ngx_addon_name
+    ngx_module_srcs=$MODULE_SRCS
+    HTTP_DYNAMIC_MODULES="$HTTP_DYNAMIC_MODULES $ngx_module_name"
+    . auto/module
+else
+    HTTP_MODULES="$HTTP_MODULES $ngx_addon_name"
+    NGX_ADDON_SRCS="$NGX_ADDON_SRCS $SRCS"
+fi
